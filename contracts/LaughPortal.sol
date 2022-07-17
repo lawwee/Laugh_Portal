@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
 
@@ -29,8 +29,8 @@ contract LaughPortal {
 
     function laugh(string memory _message) public {
         require(
-            lastWavedAt[msg.sender] + 15 minutes < block.timestamp,
-            "Wait 15 mins"
+            lastWavedAt[msg.sender] + 24 hours < block.timestamp,
+            "Wait 24 hours"
         );
         lastWavedAt[msg.sender] = block.timestamp;
 
@@ -41,13 +41,13 @@ contract LaughPortal {
         seed = (block.timestamp + block.difficulty + seed) % 100;
         console.log("Random # generated: %d", seed);
 
-        if (seed <= 50) {
+        if (seed <= 10) {
             console.log("%s won the prize!!!", msg.sender);
 
-            uint256 prizeAmount = 0.0001 ether;
+            uint256 prizeAmount = 0.00001 ether;
             require(
                 prizeAmount <= address(this).balance,
-                "You do not have enough ether to send"
+                "Not enough ether to send"
             );
             (bool success, ) = (msg.sender).call{value: prizeAmount}("");
             require(success, "Failed to complete bonus transaction");

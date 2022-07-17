@@ -1,4 +1,5 @@
 const main = async () => {
+    const [owner, randomUser] = await hre.ethers.getSigners()
     const laughContractFactory = await hre.ethers.getContractFactory("LaughPortal");
     const laughContract = await laughContractFactory.deploy({
         value: hre.ethers.utils.parseEther("0.1"),
@@ -19,11 +20,11 @@ const main = async () => {
     // laughCount = await laughContract.getTotalLaughs();
     // console.log(laughCount.toNumber());
 
-    const laughFriend = await laughContract.laugh("A simple message from me i guess");
-    await laughFriend.wait();
+    let txn = await laughContract.laugh("A simple message from me i guess");
+    await txn.wait();
 
-    const laughFriend2 = await laughContract.laugh("A simple message from me again");
-    await laughFriend2.wait();
+    txn = await laughContract.connect(randomUser).laugh("A simple message from second me");
+    await txn.wait();
 
     // const [_, randomPerson] = await hre.ethers.getSigners();
     // laughFriend = await laughContract.connect(randomPerson).laugh("Another message from me as well");

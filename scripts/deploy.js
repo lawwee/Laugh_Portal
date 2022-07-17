@@ -11,7 +11,7 @@ const main = async () => {
     });
     await laughContract.deployed();
 
-    console.log("Current Laugh Portal is:", laughContract.address);
+    console.log("Current Laugh Portal address is:", laughContract.address);
 };
 
 const runMain = async () => {
