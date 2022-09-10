@@ -12,6 +12,7 @@ const main = async () => {
     await laughContract.deployed();
 
     console.log("Current Laugh Portal address is:", laughContract.address);
+    // 0xE48431765402fD1d27C650f2592FA3D23F9574fA
 };
 
 const runMain = async () => {
