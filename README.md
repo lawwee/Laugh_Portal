@@ -1,5 +1,15 @@
 # Laugh Portal
 
-It is a simple decentralized application, created from a smart contract.
+Technologies Used:
+  * Solidity
+  * Javascript
+  * Hardhat
+  * Remix IDE
+  * Alchemy
+  * Metamask
 
-It allows users sign transactions and send them as laughs and messages. There is also an automated functionality which basically sends an amount of ether to a random user address.
+Laugh Portal is a very basic decentralized application.
+
+Its most basic functionalities is to allow users sign transactions and send them as laugh emojis with any desirable messages of their choice. Also allows for an automated system, designed to send ether(ETH) as a gift to any random user or address on the network.
+
+Herein lies the functions available to all users on the platform
