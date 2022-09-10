@@ -18,7 +18,7 @@ Herein lies the functionalities available to all users on the platform.
 
 * The **NewLaugh** Event - This event is triggered each time a user on the platform sends a laugh emoji and message. The details on each trigger is of three parameters namely _from_, _timestamp_ and _message_. The "from" indicates the address that is signing and sending a message, the "timestamp" shows the time in which the message and laugh was signed, and lastly, the "message" is a copy of the message that was sent by the user.
 
-* The **laugh()** Function - This function represents the main functionality of the platform, it takes one parameter called _message_ (see NewLaugh). The function is called when the user intends to send a message unto the platform. It has a security check that prevents users from sending mre than one message in 24 hours, and also sets the randomness of how the contract sends ether to a user or address.
+* The **laugh()** Function - This function represents the main functionality of the platform, it takes one parameter called _message_ (see NewLaugh). The function is called when the user intends to send a message unto the platform. It has a security check that prevents users from sending more than one message in 24 hours, and also sets the randomness of how the contract sends ether to a user or address.
 
 * The **getAllLaughs()** Function - This function simply returns an array of all the laugh emojis and their designated messages.
 
